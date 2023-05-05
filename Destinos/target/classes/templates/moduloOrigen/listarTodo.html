@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+<meta charset="ISO-8859-1">
+<title>Listar Nuevo Origen</title>
+<!--JQUERY-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
+
+</head>
+<body>
+	
+	<div align="center">
+		<h1>Nuevo Viaje</h1>
+		<a  th:href="@{/Origen/nuevo}">Crear un nuevo Viaje</a> <br />
+		<br/>
+		<table border="1" cellpadding="10">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Nro_Aeropuerto</th>
+					<th>Ciudad</th>
+					<th>Cod_Ciudad</th>
+					<th>Estado</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="Origen : ${listaOrigen}">
+					<td th:text="${Origen.Id_Origen}">Id</td>
+					<td th:text="${Origen.Nro_Aeropuerto}">Nro_Aeropuerto</td>
+					<td th:text="${Origen.Ciudad}">Ciudad</td>
+					<td th:text="${Origen.Cod_Ciudad}">Cod_Ciudad</td>
+					<td th:text="${Origen.Estado}">Estado</td>
+					<td><a th:href="@{/Origen/actualizar/{id}(id=${Origen.Id_Origen})}">Actualizar</a>
+						&nbsp;&nbsp;&nbsp; 
+						<a th:href="@{/Origen/eliminar/{id}(id=${Origen.Id_Origen})}">Eliminar</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

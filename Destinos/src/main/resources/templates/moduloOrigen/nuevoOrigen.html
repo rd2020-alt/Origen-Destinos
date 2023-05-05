@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<!--JQUERY-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+<title>Crear Nuevo Viaje</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Nueva Origen</h1>
+		<br />
+		<form action="#" th:action="@{/Origen/guardar}" th:object="${Origen}"
+			method="post">
+
+			<table border="0" cellpadding="10">
+				<tr>
+					<td>Nro_Aeropuerto:</td>
+					<td><input type="text" th:field="*{Nro_Aeropuerto}" /></td>
+				</tr>
+				<tr>
+					<td>Ciudad</td>
+					<td><input type="text" th:field="*{Ciudad}" /></td>
+				</tr>
+				<tr>
+					<td>Cod_Ciudad</td>
+					<td><input type="text" th:field="*{Cod_Ciudad}" /></td>
+				</tr>
+				<tr>
+					<td>Estado</td>
+					<td><input type="text" th:field="*{Estado}" /></td>
+				</tr>
+				
+				<tr>
+					<td colspan="2"><button type="submit">Guardar</button></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</html>
